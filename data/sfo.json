@@ -1,0 +1,30 @@
+{
+	"delay": "false",
+	"IATA": "SFO",
+	"state": "California",
+	"name": "San Francisco International",
+	"weather": {
+		"visibility": 10.00,
+		"weather": "A Few Clouds",
+		"meta": {
+			"credit": "NOAA's National Weather Service",
+			"updated": "6:56 AM Local",
+			"url": "http://weather.gov/"
+		},
+		"temp": "46.0 F (7.8 C)",
+		"wind": "Southwest at 3.5mph"
+	},
+	"ICAO": "KSFO",
+	"city": "San Francisco",
+	"status": {
+		"reason": "No known delays for this airport.",
+		"closureBegin": "",
+		"endTime": "",
+		"minDelay": "",
+		"avgDelay": "",
+		"maxDelay": "",
+		"closureEnd": "",
+		"trend": "",
+		"type": ""
+	}
+}

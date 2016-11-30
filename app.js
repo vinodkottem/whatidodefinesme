@@ -1,25 +1,50 @@
-/*eslint-env node*/
 
-//------------------------------------------------------------------------------
-// node.js starter application for Bluemix
-//------------------------------------------------------------------------------
-
-// This application uses express as its web server
-// for more info, see: http://expressjs.com
 var express = require('express');
+var fs = require('fs');
+//var bodyParser = require('body-parser');
 
-// cfenv provides access to your Cloud Foundry environment
-// for more info, see: https://www.npmjs.com/package/cfenv
+
+
+
+// load local json data
+var locdata = require(__dirname+'/data/sfo.json');
 var cfenv = require('cfenv');
 
-// create a new express server
 var app = express();
+// configure app to use bodyParser()
+// this will let us get the data from a POST
+//app.use(bodyParser.urlencoded({ extended: true }));
+//app.use(bodyParser.json());
 
-// serve the files out of ./public as our main files
 app.use(express.static(__dirname + '/public'));
 
-// get the app environment from Cloud Foundry
+
 var appEnv = cfenv.getAppEnv();
+//console.log(locdata);
+
+// my customized routes
+app.get('/sendResponse', function (req, res) {
+  res.send('Hello World!');
+});
+
+app.get('/getweather', function (req, res) {
+  var wdetail = locdata.weather;
+  res.send({'weather':wdetail});
+});
+
+// expects a value url parameter
+app.get('/weather/:country', function (req, res) {
+  console.log(req.params.country);
+  res.json({'success':'ok','weather':locdata.weather});
+});
+
+app.get('/etweather', function(req, res) {
+   res.json({ countrygiven: req.query.country});
+});
+
+app.get('/crashmysystem', function(req, res) {
+  process.exit();
+});
 
 // start server on the specified port and binding host
 app.listen(appEnv.port, '0.0.0.0', function() {
