@@ -47,6 +47,10 @@ app.get("/wonderful", function(req, res) {
    res.json({ wonderful: "journey in bluemix world!!!"});
 });
 
+app.get("/wastedmytime", function(req, res) {
+   res.json({ regret: "Literally wasted precious 6 months by not attending this session"});
+});
+
 app.get("/crashmysystem", function(req, res) {
   process.exit();
 });
