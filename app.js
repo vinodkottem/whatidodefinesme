@@ -51,6 +51,10 @@ app.get("/wastedmytime", function(req, res) {
    res.json({ regret: "Literally wasted precious 6 months by not attending this session"});
 });
 
+app.get("/ennamacha", function(req, res) {
+   res.json({ response: "Nothing much machi"});
+});
+
 app.get("/crashmysystem", function(req, res) {
   process.exit();
 });
