@@ -55,6 +55,10 @@ app.get("/ennamacha", function(req, res) {
    res.json({ response: "Nothing much machi"});
 });
 
+app.get("/deploydaa", function(req, res) {
+   res.json({ response: "No Da . Kabali Daaaaa!!!!!!!1"});
+});
+
 app.get("/crashmysystem", function(req, res) {
   process.exit();
 });
