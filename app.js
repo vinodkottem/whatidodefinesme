@@ -44,7 +44,7 @@ app.get("/etweather", function(req, res) {
 });
 
 app.get("/wonderful", function(req, res) {
-   res.json({ wonderful: "journey in bluemix world"});
+   res.json({ wonderful: "journey in bluemix world!!!"});
 });
 
 app.get("/crashmysystem", function(req, res) {
