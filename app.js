@@ -44,7 +44,7 @@ app.get("/etweather", function(req, res) {
 });
 
 app.get("/wonderful", function(req, res) {
-   res.json({ wonderful: "journey in bluemix world! hhhhhhhhhxxssssshhhhhhhhhhh!!"});
+   res.json({ wonderful: "journey in dash world! hhhhhhhhhxxssssshhhhhhhhhhh!!"});
 });
 
 app.get("/wastedmytime", function(req, res) {
