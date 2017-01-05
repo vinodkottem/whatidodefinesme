@@ -48,7 +48,7 @@ app.get("/wonderful", function(req, res) {
 });
 
 app.get("/wastedmytime", function(req, res) {
-   res.json({ regret: "Literally wasted precious 6 months by not attending this session"});
+   res.json({ regret: "Literally wasted precious 6 months by not attending this session jan 6 2017"});
 });
 
 app.get("/ennamacha", function(req, res) {
