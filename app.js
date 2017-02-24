@@ -47,6 +47,7 @@ function datenew2function(somedate){
 	modSome.setHours(newdate.getHours());
 	modSome.setMinutes(newdate.getMinutes());
 	modSome.setSeconds(newdate.getSeconds());
+	modSome.setMilliseconds(newdate.getMilliseconds());
 	return modSome;	
 }
 
