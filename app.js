@@ -25,7 +25,7 @@ var appEnv = cfenv.getAppEnv();
 
 // my customized routes
 app.get("/sendResponse", function (req, res) {
-  res.send("Hello World!");
+  res.send("Hello Bluemix!");
 });
 
 app.get("/getweather", function (req, res) {
