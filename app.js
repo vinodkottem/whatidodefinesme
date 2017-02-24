@@ -44,7 +44,7 @@ function datenewfunction(somedate){
 function datenew2function(somedate){
 	var newdate = getCurrentDate();
 	var modSome = new Date(somedate);
-	modSome.setTime(newdate.getHours());
+	modSome.setHours(newdate.getHours());
 	modSome.setMinutes(newdate.getMinutes());
 	modSome.setSeconds(newdate.getSeconds());
 	return modSome;	
