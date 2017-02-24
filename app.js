@@ -73,7 +73,7 @@ function dateoldfunction(somedate){
 
 app.get("/dateEating/:d", function (req, res) {
   console.log(req.params.d);
-  var da = {"final":datenew2function(req.params.d),"momentissuedate": datenewfunction(req.params.d),"olddate":dateoldfunction(req.params.d),"serverdate":new Date()};
+  var da = {"final":datenew2function(req.params.d),"momentissuedate": datenewfunction(req.params.d),"olddate":dateoldfunction(req.params.d),"serverdate":new Date(),"serverINDIA":getCurrentDate()};
   res.send(JSON.stringify(da));
 });
 
