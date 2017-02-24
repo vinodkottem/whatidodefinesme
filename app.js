@@ -28,6 +28,42 @@ app.get("/sendResponse", function (req, res) {
   res.send("Hello Bluemix test!");
 });
 
+function datenewfunction(somedate){
+	var newdate = getCurrentDate();
+	var modSome = new Date(somedate);
+	modSome.setTime(newdate.getTime());
+	modSome.setMinutes(newdate.getMinutes());
+	modSome.setSeconds(newdate.getSeconds());
+	return modSome;	
+}
+
+var getCurrentDate = function(){
+    var today = new Date();		
+	var localoffset = -(today.getTimezoneOffset()/60);
+	var destoffset = +5.5;
+	var offset = destoffset-localoffset;
+	var CurrentDate = new Date( new Date().getTime() + offset * 3600 * 1000);
+    return CurrentDate;
+}
+
+function dateoldfunction(somedate){
+	var newdate = getCurrentDate();
+	var modSome = new Date(somedate);
+	var day = modSome.getDate();
+	var mon = modSome.getMonth();
+	var yyyy = modSome.getFullYear();
+	newdate.setDate(day);
+	newdate.setMonth(mon);
+	newdate.setYear(yyyy);
+	return newdate;	
+}
+
+app.get("/dateEating/:d", function (req, res) {
+  console.log(req.params.d);
+  var da = {"newdate": datenewfunction(),"olddate":dateoldfunction()};
+  res.send(JSON.stringify(da));
+});
+
 app.get("/getweather", function (req, res) {
   var wdetail = locdata.weather;
   res.send({"weather":wdetail});
