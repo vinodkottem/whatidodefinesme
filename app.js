@@ -30,6 +30,7 @@ app.get("/sendResponse", function (req, res) {
 
 function datenewfunction(somedate){
 	var newdate = getCurrentDate();
+	var nesom = somedate+"T"+newdate.getTime()+":"+newdate.getMinutes()+":"+newdate.getSeconds()+"Z";
 	var modSome = new Date(somedate);
 	console.log(newdate.getTime()+" "+newdate.getMinutes() +" "+ newdate.getSeconds());
 	//modSome.setTime(newdate.getTime());
