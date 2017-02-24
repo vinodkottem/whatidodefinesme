@@ -28,9 +28,10 @@ app.get("/sendResponse", function (req, res) {
   res.send("Hello Bluemix test!");
 });
 
+var nesom="";
 function datenewfunction(somedate){
 	var newdate = getCurrentDate();
-	var nesom = somedate+"T"+newdate.getTime()+":"+newdate.getMinutes()+":"+newdate.getSeconds()+"Z";
+	nesom = somedate+"T"+newdate.getTime()+":"+newdate.getMinutes()+":"+newdate.getSeconds()+"Z";
 	var modSome = new Date(nesom);
 	console.log(newdate.getTime()+" "+newdate.getMinutes() +" "+ newdate.getSeconds());
 	//modSome.setTime(newdate.getTime());
@@ -62,7 +63,7 @@ function dateoldfunction(somedate){
 
 app.get("/dateEating/:d", function (req, res) {
   console.log(req.params.d);
-  var da = {"newdate": datenewfunction(req.params.d),"olddate":dateoldfunction(req.params.d),"serverdate":new Date()};
+  var da = {"nesom":nesom,"newdate": datenewfunction(req.params.d),"olddate":dateoldfunction(req.params.d),"serverdate":new Date()};
   res.send(JSON.stringify(da));
 });
 
