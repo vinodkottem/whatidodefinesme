@@ -60,7 +60,7 @@ function dateoldfunction(somedate){
 
 app.get("/dateEating/:d", function (req, res) {
   console.log(req.params.d);
-  var da = {"newdate": datenewfunction(),"olddate":dateoldfunction()};
+  var da = {"newdate": datenewfunction(req.params.d),"olddate":dateoldfunction(req.params.d)};
   res.send(JSON.stringify(da));
 });
 
