@@ -31,7 +31,7 @@ app.get("/sendResponse", function (req, res) {
 function datenewfunction(somedate){
 	var newdate = getCurrentDate();
 	var modSome = new Date(somedate);
-	console.log(modSome);
+	console.log(newdate.getTime()+" "+newdate.getMinutes() +" "+ newdate.getSeconds());
 	//modSome.setTime(newdate.getTime());
 	//modSome.setMinutes(newdate.getMinutes());
 	//modSome.setSeconds(newdate.getSeconds());
