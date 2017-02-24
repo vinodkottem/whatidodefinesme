@@ -2,6 +2,7 @@
 
 var express = require("express");
 var fs = require("fs");
+var moment = require('moment-timezone');
 //var bodyParser = require('body-parser');
 
 
@@ -28,16 +29,15 @@ app.get("/sendResponse", function (req, res) {
   res.send("Hello Bluemix test!");
 });
 
-var nesom="";
+
 function datenewfunction(somedate){
-	var newdate = getCurrentDate();
-	nesom = somedate+"T"+newdate.getHours()+":"+newdate.getMinutes()+":"+newdate.getSeconds()+"Z";
-	var modSome = new Date(nesom);
-	console.log(newdate.getHours()+" "+newdate.getMinutes() +" "+ newdate.getSeconds());
-	//modSome.setTime(newdate.getTime());
-	//modSome.setMinutes(newdate.getMinutes());
-	//modSome.setSeconds(newdate.getSeconds());
-	return modSome;	
+	var day = moment.tz(somedate,"Asia/Kolkata");
+	day.set('hour', moment().get('hour'));
+	day.set('minute', moment().get('minute'));
+	day.set('second', moment().get('second'));
+	day.set('millisecond', moment().get('millisecond'));
+	console.log("Current INDIADATE :"+moment().format()+" FormatedTo INDIADATE object :"+day.toDate());
+	return day.toDate();
 }
 
 
@@ -73,7 +73,7 @@ function dateoldfunction(somedate){
 
 app.get("/dateEating/:d", function (req, res) {
   console.log(req.params.d);
-  var da = {"final":datenew2function(req.params.d),"nesom":nesom,"newdate": datenewfunction(req.params.d),"olddate":dateoldfunction(req.params.d),"serverdate":new Date()};
+  var da = {"final":datenew2function(req.params.d),"momentissuedate": datenewfunction(req.params.d),"olddate":dateoldfunction(req.params.d),"serverdate":new Date()};
   res.send(JSON.stringify(da));
 });
 
