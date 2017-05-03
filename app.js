@@ -3,7 +3,8 @@
 var express = require("express");
 var fs = require("fs");
 var moment = require('moment-timezone');
-var logger = require("./logger");
+//var logger = require("./logger");
+var logger = require("./logger-daily");
 //var bodyParser = require('body-parser');
 
 
